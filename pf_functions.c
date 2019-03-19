@@ -1,60 +1,74 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <stlib.h>
 
 /**
  * string - Print string
  *
- * @n: Parameters string
+ * @mylist: Parameters
  *
  * Return: 0
  */
 
-char string(char *n)
+int string(va_list mylist)
 {
+	char *p = va_arg(mylist, char*);
 	int iter = 0;
+	char nul[] = {"(null)"};
 
-	while (n[iter] != '\0')
+	if (p != NULL)
 	{
-		putchar(n[iter]);
-		iter++;
+
+		while (p[iter] != '\0')
+		{
+			_putchar(p[iter]);
+			iter++;
+		}
 	}
-	putchar('\n');
-	return (0);
+	else
+	{
+		while (nul[iter] != '\0')
+		{
+			_putchar(nul[iter]);
+			iter++;
+		}
+	}
+	return (iter);
 }
 
 /**
  * only_char - Print char
  *
- * @n: Parameters char
+ * @mylist: Parameters
  *
  * Return: 0
  */
 
-int only_char(char *n)
+int only_char(va_list mylist)
 {
-	putchar(n);
-	putchar('\n');
-	return (0);
+	_putchar(va_arg(mylist, int));
+	return (1);
 }
 
 
 /**
- * digit - Print char
+ * digit - Print integer
  *
- * @n: Parameters char
+ * @n: Parameters numbers
  *
  * Return: 0
  */
 
 int digit(int n)
 {
-	int cont;
-
-	for (cont = 48; cont <= 57; cont++)
+	if (n < 0)
 	{
-		putchar(n);
+		_putchar('-');
+		n = -n;
 	}
-	putchar('\n');
-	return (0);
+	if (n == 0)
+		_putchar('0');
+		return (0);
+	if (n / 10)
+		digit(n / 10);
+	_putchar(n % 10 + '0');
+	return (n);
 }

@@ -1,6 +1,8 @@
 #ifndef HOLBERTON
 #define HOLBERTON
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
 /**
  * struct pf - Struct pf
  *
@@ -10,10 +12,11 @@
 typedef struct pf
 {
 	char *char_t;
-	int (*f)(char*);
+	int (*f)(va_list);
 } pf_t;
-
-char string(char *n);
-char one(char *n);
-
+int _printf(const char *format, ...);
+int string(va_list mylist);
+int only_char(va_list mylist);
+int digit(int n);
+int _putchar(char c);
 #endif
