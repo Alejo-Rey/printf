@@ -3,7 +3,7 @@
 /**
  * string - Print string
  *
- * @n: Parameters string
+ * @mylist: Parameters
  *
  * Return: 0
  */
@@ -37,7 +37,7 @@ int string(va_list mylist)
 /**
  * only_char - Print char
  *
- * @n: Parameters char
+ * @mylist: Parameters
  *
  * Return: 0
  */
@@ -50,7 +50,7 @@ int only_char(va_list mylist)
 
 
 /**
- * Integer - Print integer
+ * digit - Print integer
  *
  * @n: Parameters numbers
  *
