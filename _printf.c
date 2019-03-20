@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		if (format[iter] == '%' && format[iter + 1] == '%')
 		{
 			_putchar(format[iter]);
-			_putchar('\n'); }
+		}
 		_switch = 0;
 
 		if (format[iter] == '%')
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				if (*(array[i].char_t) == format[iter])
 				{
 					_switch = 1;
-					x = array[i].f(mylist);
+					x += (array[i].f(mylist) - 2);
 				}}
 			if (_switch == 0 && format[iter] != '%')
 			{
